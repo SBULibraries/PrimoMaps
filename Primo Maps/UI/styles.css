@@ -1,0 +1,239 @@
+/* Defines the body text */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* P1 Class Font and Size */
+.p1 {
+    font-family: "Effra", "Montserrat", Times, sans-serif;
+    font-size: 16px;
+}
+
+/* P2 Class Font and Size */
+.p2 {
+    font-family: "Effra", "Montserrat", Times, sans-serif;
+    font-size: 32px;
+    font-weight: bold;   
+}
+
+/* Left Page Size and Background Color */
+.left-page {
+    width:100vw;
+    height:100vh;
+    flex: 1;
+    background-color: #ffffff;
+}
+
+/* Right Page when displayed */
+.right-page.shown {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    right: 0;
+    min-width: 300px; 
+    width: 25vw;
+    max-width: 350px;
+    box-sizing: border-box;
+    text-wrap: wrap;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+    transform: translateX(0%);
+    transition: transform 0.25s ease-out;
+}
+
+/* Style for the Book Cover and Call Number section of Right Page */
+.bookContainer {
+    display: flex;
+    align-items: center; 
+}
+
+.BookCover {
+    margin-right: 15px; 
+    background-color: #f0f0f0; 
+    object-fit: cover;
+}
+
+/* Allows for JS to hide the image */
+.bookCover.hidden {
+    display: none;
+}
+
+/* Specific styling for the book cover image */
+.bookCoverImage {
+    max-width: 150px; 
+    max-height: 150px; 
+    width: auto; 
+    height: auto; 
+    object-fit: contain;
+}
+
+/* Specific styling for the book cover image info */
+.bookInfo {
+    font-family: 'Effra', 'Montserrat', Times, sans-serif;
+    font-size: 16px; 
+    font-weight: bold; 
+    text-align: left; 
+}
+
+/* Used when a book cover image isn't found */
+.align-left {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Right Page when hidden */
+.right-page.hidden {
+    position: fixed;
+    height: 100%;
+    min-width: 300px; 
+    width: 25vw;
+    max-width: 350px;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    text-wrap: wrap;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+    transform: translateX(100%);
+    transition: transform 0.25s ease-out;
+}
+
+/* Style for the Vertical Bar on Mobile */
+.verticalBar {
+    position: fixed;
+    z-index: 2;
+    width: 10px;
+    padding: 10px;
+    height: 100%;
+    background-color: #990000;
+    right: 0;
+    top: 0;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.3s;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Text within the Vertical Bar on Mobile */
+.verticalText span {
+    display: flex;
+    font-family: "Effra", "Montserrat", Times, sans-serif;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+/* ALL Image Charactersitics */
+img {
+    max-width: 100%;
+    max-height:100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Button to Toggle the Right Page */
+.toggleButton {
+    position: fixed;
+    z-index: 2;
+    font-family: "Effra", "Montserrat", Century, sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #990000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    right: 10px;
+    top: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.3s;
+}
+
+/* Toggle Buttons Hover Color */
+.toggleButton:hover, .guideButton:hover, .close-button:hover {
+    background-color: #828282;
+}
+
+/* Left Page is in a zoom container to allow for zooming */
+.zoom-container {
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+/* iframe styling for Call Number Help Guide and Directions */
+#iframeContainer1, #iframeContainer2 {
+    display: none; 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 9999; 
+    background-color: white; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
+    max-height: 80vh;
+    min-height: 50vh;
+    max-width: 80vw; 
+    min-width: 50vw;
+    overflow-y: auto; 
+    overflow-x: auto;
+}
+
+/* Left Page movement */
+#leftPage {
+    transition: transform 0.25s ease-out;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* iframe Close Window button styling */
+.close-button, .guideButton {
+    font-family: 'Effra', 'Montserrat', Century, sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #990000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.3s;
+}
+/* Additional Styling for the "X" */
+.close-button {
+    position: fixed;
+    z-index: 1000;
+    right: 10px;
+    top: 10px;
+}
+.box-html {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Styling for Mobile Windows, shows the vertical bar and hides the Toggle */
+@media only screen and (max-width: 800px) {
+    .toggleButton {
+        display: none !important;
+    }
+    
+    .verticalBar {
+        display: flex; /* Show vertical bar */
+    }
+
+    .verticalText {
+        display: block; /* Show vertical text */
+    }
+    .verticalBar.active {
+        transform: translateX(-1000%);
+    }
+}
